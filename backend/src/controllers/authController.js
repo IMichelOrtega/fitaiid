@@ -530,7 +530,7 @@ const sendVerificationCodeEmail = async (email, firstName, code) => {
           
           <!-- Header / Logo -->
           <div style="padding: 30px 20px 10px; text-align: center;">
-            <h1 style="margin: 0; color: #ff2a2a; font-size: 34px; font-weight: 900; letter-spacing: 4px; text-transform: uppercase;">FITAIID</h1>
+            <h1 style="margin: 0; color: #ff2a2a; font-size: 34px; font-family: 'Arial Black', Impact, sans-serif; font-weight: 900; letter-spacing: 4px; text-transform: uppercase; -webkit-text-stroke: 1.5px #ff2a2a;">FITAIID</h1>
           </div>
 
           <!-- Body -->

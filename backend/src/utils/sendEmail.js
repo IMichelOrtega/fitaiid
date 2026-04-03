@@ -7,7 +7,7 @@ function verificationEmailHtml({ name, verifyUrl }) {
         
         <!-- Header -->
         <div style="background-color: #ff3c00; background: linear-gradient(90deg, #ff0000 0%, #ff7a00 100%); padding: 30px 20px; text-align: center;">
-          <h1 style="margin: 0; color: #ffffff; font-size: 28px; letter-spacing: 2px; text-transform: uppercase;">FITAIID</h1>
+          <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-family: 'Arial Black', Impact, sans-serif; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; -webkit-text-stroke: 1px #ffffff;">FITAIID</h1>
         </div>
 
         <!-- Body -->
