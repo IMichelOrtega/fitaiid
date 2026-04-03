@@ -520,22 +520,50 @@ const sendVerificationCodeEmail = async (email, firstName, code) => {
   const emailParams = new EmailParams()
     .setFrom(sender)
     .setTo(recipients)
-    .setSubject("Código de Verificación - FitAiid")
+    .setSubject("¡Listo para transformar tu cuerpo! - Código de Verificación")
     .setHtml(`
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <h2 style="color: #333;">¡Bienvenido a FitAiid!</h2>
-        <p>Hola ${firstName},</p>
-        <p>Gracias por registrarte. Tu código de verificación es:</p>
-        <div style="background-color: #f4f4f4; padding: 20px; text-align: center; border-radius: 5px; margin: 20px 0;">
-          <h1 style="color: #667eea; font-size: 36px; letter-spacing: 5px; margin: 0;">
-            ${code}
-          </h1>
+      <div style="margin: 0; padding: 40px 20px; background-color: #0b0d17; font-family: Arial, sans-serif; color: #ffffff;">
+        <div style="max-width: 600px; margin: 0 auto; background-color: #0d0d0d; background: radial-gradient(circle at top left, #2b0000 0%, #0d0d0d 70%); border: 1px solid #ff2a2a; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 30px rgba(255, 0, 0, 0.2);">
+          
+          <!-- Barra decorativa superior -->
+          <div style="background-color: #ff3c00; background: linear-gradient(90deg, #ff0000 0%, #ff7a00 100%); height: 6px; width: 100%;"></div>
+          
+          <!-- Header / Logo -->
+          <div style="padding: 30px 20px 10px; text-align: center;">
+            <h1 style="margin: 0; color: #ff2a2a; font-size: 34px; font-weight: 900; letter-spacing: 4px; text-transform: uppercase;">FITAIID</h1>
+          </div>
+
+          <!-- Body -->
+          <div style="padding: 20px 40px 40px; text-align: center;">
+            <h2 style="margin-top: 0; color: #ffffff; font-size: 26px; font-weight: bold;">¡Listo para transformar tu cuerpo! 💪</h2>
+            <p style="color: #d1d5db; font-size: 16px; line-height: 1.6; margin-bottom: 30px;">
+              Hola <strong style="color: #fff;">${firstName || 'atleta'}</strong>, estás a un solo paso de arrancar tu evolución. Aquí tienes tu código de verificación:
+            </p>
+            
+            <!-- Código destacado -->
+            <div style="background-color: #111827; border: 2px dashed #ff3c00; padding: 25px; border-radius: 12px; margin: 20px auto; width: fit-content; text-align: center;">
+              <p style="margin: 0 0 10px 0; color: #9ca3af; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Ingresa este código</p>
+              <h1 style="margin: 0; color: #ff3c00; font-size: 46px; letter-spacing: 12px; font-weight: 900; padding-left: 12px;">
+                ${code}
+              </h1>
+            </div>
+
+            <p style="color: #9ca3af; font-size: 14px; margin-top: 25px;">
+              Este código expira en <strong>15 minutos</strong>. Regresa a la aplicación e ingrésalo para activar tu cuenta.
+            </p>
+          </div>
+
+          <!-- Footer -->
+          <div style="background-color: #060810; padding: 20px; text-align: center; border-top: 1px solid rgba(255, 42, 42, 0.2);">
+            <p style="margin: 0; color: #6b7280; font-size: 12px;">
+              ¿No solicitaste este registro? Ignora este correo, tus datos están seguros.
+            </p>
+          </div>
+
         </div>
-        <p>Este código expira en <strong>15 minutos</strong>.</p>
-        <p style="color: #999; font-size: 14px;">Si no te registraste, ignora este correo.</p>
       </div>
     `)
-    .setText(`Tu código de verificación de FitAiid es: ${code}. Expira en 15 minutos.`);
+    .setText(`¡Listo para transformar tu cuerpo! Hola ${firstName}, tu código de verificación es: ${code}. Expira en 15 minutos.`);
 
   await mailerSend.email.send(emailParams);
   console.log(`📩 Código enviado exitosamente a: ${email}`);
